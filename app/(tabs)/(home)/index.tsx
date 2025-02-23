@@ -8,17 +8,27 @@ import {
   type SQLiteDatabase,
 } from "expo-sqlite";
 import * as SQLite from "expo-sqlite";
-import MainScreen from "./screens/MainScreen";
-import ImportScreen from "./screens/ImportScreen";
+import MainScreen from "../../../screens/MainScreen";
+import ImportScreen from "../import";
+import { Link, useRouter } from "expo-router";
+
 
 export default function Index() {
-  
-  useEffect(() => {}, []);
+  const router = useRouter();
+
 
   return (
-    <SQLiteProvider databaseName="app.db">
+    <>
+
       <MainScreen />
-      <ImportScreen />
-    </SQLiteProvider>
+      <Link href="/import">Import</Link>
+      <Button
+        onPress={() => {
+          router.navigate("/import");
+        }}
+        title="Import file"
+      />
+      {/* <ImportScreen /> */}
+    </>
   );
 }

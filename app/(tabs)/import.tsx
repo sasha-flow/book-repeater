@@ -7,7 +7,8 @@ import {
 import * as SQLite from "expo-sqlite";
 import * as DocumentPicker from "expo-document-picker";
 import * as FileSystem from "expo-file-system";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function ImportScreen() {
   const [db, setDb] = useState<SQLiteDatabase | null>(null);
@@ -18,6 +19,10 @@ export default function ImportScreen() {
   const [books, setBooks] = useState<SourceBook[]>([]);
 
   const appDb = useSQLiteContext();
+
+  useEffect(() => {
+    console.log("effect run");
+  }, []);
 
   const handlePickFile = async () => {
     const result = await DocumentPicker.getDocumentAsync({
@@ -32,12 +37,19 @@ export default function ImportScreen() {
     const { uri, name } = result.assets[0];
     setName(name);
     setUri(uri);
+    try {
+      await AsyncStorage.setItem("dbUri", uri);
+    } catch (e) {
+      console.log("error saving uri", e);
+      // saving error
+    }
 
     // const destPath = `${FileSystem.documentDirectory}${name}`;
     // console.log("destPath", destPath);
     // await FileSystem.copyAsync({ from: uri, to: destPath });
 
     // const db = await SQLite.openDatabaseAsync(destPath);
+
     const db = await SQLite.openDatabaseAsync(uri);
     setDb(db);
   };
