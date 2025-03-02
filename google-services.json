@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "372114713051",
+    "project_id": "book-repeater",
+    "storage_bucket": "book-repeater.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372114713051:android:c98dc0109567378a0edffe",
+        "android_client_info": {
+          "package_name": "com.zigzagflow.bookrepeater"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372114713051-jfrbfvqbot5ja02a033ujpnbqpej0bfm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zigzagflow.bookrepeater",
+            "certificate_hash": "a4887cc26f6735a21440a2e3f9621637bce2f53f"
+          }
+        },
+        {
+          "client_id": "372114713051-ojcnb802jdp63je1dan5sii31cukilrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYLC3af4LrF2BjLfjESTYhkwQz_G-NKaQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372114713051-ojcnb802jdp63je1dan5sii31cukilrs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "372114713051-hsteimata2egk2o84u5btaanfkkepr95.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zigzagflow.bookrepeater"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

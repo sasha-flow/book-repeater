@@ -10,18 +10,15 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.bookrepeater"
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
-      "permissions": [
-        "READ_EXTERNAL_STORAGE",
-        "READ_EXTERNAL_STORAGE"
-      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.bookrepeater"
+      "package": "com.zigzagflow.bookrepeater",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "bundler": "metro",
@@ -29,6 +26,10 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      "@react-native-google-signin/google-signin",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "@react-native-firebase/crashlytics",
       "expo-router",
       [
         "expo-splash-screen",
@@ -38,9 +39,7 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ],
-      "expo-sqlite",
-      "expo-build-properties"
+      ]
     ],
     "experiments": {
       "typedRoutes": true
